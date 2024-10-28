@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        /* Background color for the body */
+        body {
+            background-image: url('background.jpeg'); /* Ganti dengan URL gambar Anda */
+            background-size: cover; /* Memastikan gambar menutupi seluruh area */
+            background-position: center; /* Memposisikan gambar di tengah */
+            background-repeat: no-repeat; /* Tidak mengulangi gambar */
+            background-attachment: fixed; /* Menjaga gambar tetap saat scroll (opsional) */
+        }
+
+        /* Navbar customization */
+        .custom-navbar {
+            background-color: #f3e3d5; /* Beige pastel lembut untuk navbar */
+        }
+
+        .custom-navbar .navbar-brand,
+        .custom-navbar .nav-link {
+            color: #6B5E55 !important; /* Cokelat keabuan lembut untuk kontras */
+        }
+
+        .custom-navbar .nav-link.active,
+        .custom-navbar .nav-link:hover {
+            color: #C5A88B !important; /* Beige sedikit lebih gelap untuk aktif dan hover */
+        }
+
+        /* Carousel text customization */
+        .carousel-caption h5 {
+            color: #FFFFFF; /* Putih untuk keterbacaan */
+            background-color: rgba(107, 94, 85, 0.6); /* Cokelat keabuan transparan */
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .carousel-caption p {
+            color: #fffcf9; 
+            background-color: rgba(107, 94, 85, 0.6);
+        }
+
+        /* Sticky container adjustments */
+        .sticky-container {
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 20px;
+            height: auto; /* Allow auto height */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f3e3;
+        }
+
+        /* Heading color customization */
+        h2 {
+            color: #C5A88B; /* Beige lebih gelap untuk heading */
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 60px; /* Ukuran font untuk kutipan */
+            color: #6B5E55; /* Warna cokelat keabuan lembut untuk kutipan */
+            text-align: center; /* Rata tengah untuk kutipan */
+            padding: 20px; /* Jarak dalam kutipan */
+            border-left: 4px solid #C5A88B; /* Garis samping untuk kutipan */
+            margin: 30px 20px; /* Margin untuk memisahkan kutipan dari konten */
+            max-width: 80%; /* Lebar maksimum untuk kutipan */
+            height: auto; /* Menjamin kutipan mengambil tinggi penuh kolom */
+        }
+
+        /* Card styling in Recipes and Exercises */
+        .card {
+            border: 1px solid #E8D5C3; /* Border beige pastel */
+            border-radius: 8px;
+            background-color: #F7F2E7; /* Latar belakang krem pastel lembut */
+        }
+
+        .card .card-title {
+            color: #C5A88B; /* Beige lebih gelap untuk judul kartu */
+        }
+
+        .card .card-text {
+            color: #6B5E55; /* Cokelat keabuan lembut untuk teks kartu */
+        }
+
+        /* Button colors */
+        .btn-primary {
+            background-color: #C5A88B; /* Beige lebih gelap */
+            border-color: #C5A88B;
+        }
+
+        .btn-primary:hover {
+            background-color: #B8967D; /* Beige lebih gelap saat hover */
+            border-color: #B8967D;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #91725c; /* Cokelat keabuan lembut */
+            color: #000; /* Hitam untuk teks footer */
+        }
+
+        /* Layout adjustments for mobile */
+        @media (max-width: 768px) {
+            .sticky-container {
+                position: static;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Iframe styling */
+        .card .card-img-top {
+            width: 100%; /* Pastikan iframe memenuhi lebar kartu */
+            height: 200px; /* Tinggi default untuk iframe */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Lifestyle Vibes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recipes">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#exercises">Exercises</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#subscribe">Subscribe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <section class="container mt-5">
+        <div id="homepageCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="healthy food.jpeg" class="d-block w-100" alt="Healthy Eating">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Healthy Eating</h5>
+                        <p>Discover nutritious recipes that make healthy eating enjoyable.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="fitness.jpg" class="d-block w-100" alt="Fitness Tips">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Fitness Tips</h5>
+                        <p>Stay active with our daily fitness tips and workout guides.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="meditate.jpeg" class="d-block w-100" alt="Mindfulness">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Mindfulness</h5>
+                        <p>Find peace with our resources on meditation and stress relief.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+<!-- About Section -->
+<section id="about" class="container my-5 d-flex">
+    <div class="col-md-6 sticky-container">
+        <h2 class="text-center mb-4">About Us</h2>
+        <p class="text-center mb-4">Lifestyle is all about finding balance, embracing health, and living in the moment. Whether you're into fitness, mindfulness, or just looking to elevate your daily routines, you've come to the right place.</p>
+        <img src="logo.png" alt="About Us Image" class="img-fluid about-image">
+    </div>
+
+    <!-- Quote Container -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <blockquote class="quote">
+            "Healthy is not a goal; it's a lifestyle"
+        </blockquote>
+    </div>
+</section>
+
+
+
+<!-- Healthy Recipes Section -->
+<section id="recipes" class="container mt-5">
+    <div class="sticky-container"> <!-- Membungkus dengan sticky-container -->
+        <h2 class="text-center mb-4">Healthy Recipes</h2>
+        <p class="text-center mb-4">Eating healthy isn't always boring. Start your journey with these easy but delicious and nutritious meals!</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="avocado salad.jpeg" class="card-img-top" alt="Avocado Salad">
+                    <div class="card-body">
+                        <h5 class="card-title">Avocado Salad</h5>
+                        <p class="card-text">A delicious and refreshing salad packed with healthy fats and vitamins.</p>
+                        <a href="#" class="btn btn-primary">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="smoothie bowl.jpeg" class="card-img-top" alt="Smoothie Bowl">
+                    <div class="card-body">
+                        <h5 class="card-title">Smoothie Bowl</h5>
+                        <p class="card-text">A colorful smoothie bowl full of fruits and nutrients for a fresh start to your day.</p>
+                        <a href="#" class="btn btn-primary">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="grilled salmon.jpeg" class="card-img-top" alt="Grilled Salmon">
+                    <div class="card-body">
+                        <h5 class="card-title">Grilled Salmon</h5>
+                        <p class="card-text">A high-protein, omega-rich meal perfect for maintaining a balanced diet.</p>
+                        <a href="#" class="btn btn-primary">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="exercises" class="container mt-5">
+    <div class="sticky-container">
+        <h2 class="text-center mb-4">Fitness at Home</h2>
+        <p class="text-center mb-4">Do you want to be fit but don't have the time to go to the gym? Try out these at home workouts!</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <iframe class="card-img-top" src="https://www.youtube.com/embed/W4eKVKwf3rQ?si=kybU-lALiVC4hHGF" title="Workout Video 1" allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h5 class="card-title">Full Body Workout</h5>
+                        <p class="card-text">This full-body workout is perfect for beginners and includes cardio and strength exercises.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <iframe class="card-img-top" src="https://www.youtube.com/embed/Zma_7kh-FGA?si=j9l50a_bCpwQl3AC" title="Workout Video 2" allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h5 class="card-title">Core Strengthening</h5>
+                        <p class="card-text">Improve your core strength with this at-home workout focused on abs and obliques.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <iframe class="card-img-top" src="https://www.youtube.com/embed/_3hoz1zATys?si=Vl3fCUITYUcg_trX" title="Workout Video 3" allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h5 class="card-title">HIIT Cardio</h5>
+                        <p class="card-text">Get your heart rate up with this high-intensity interval training (HIIT) session.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="meditation" class="container my-5 d-flex justify-content-end">
+    <div class="col-md-6 sticky-container">
+        <h2 class="text-center mb-4">Meditation</h2>
+        <p>Meditation is a powerful tool for managing stress, improving focus, and promoting mental clarity. Here, we offer simple techniques and resources to help you start your meditation journey.</p>
+        <ul>
+            <li><strong>Mindfulness Meditation:</strong> Focus on your breath and observe your thoughts without judgment.</li>
+            <li><strong>Guided Meditation:</strong> Follow audio or video guides to stay on track.</li>
+            <li><strong>Body Scan:</strong> Slowly focus on each part of your body to release tension and improve relaxation.</li>
+        </ul>
+        <img src="meditate2.jpg" alt="Meditation Image" class="img-fluid meditation-image mt-3">
+    </div>
+    <!-- Quote Container -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <blockquote class="quote">
+            "You're mindset creates your reality."
+        </blockquote>
+    </div>
+</section>
+
+
+
+
+<section id="contact" class="container mt-5">
+    <div class="sticky-container p-4 border rounded shadow-sm" style="position: sticky; top: 80px;">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <p class="text-center mb-4">Got any questions or suggestions? Feel free to contact us!</p>
+        
+        <div class="row">
+            <!-- Left Column: Contact Form -->
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+            <!-- Right Column: Social Media Information -->
+            <div class="col-md-6 d-flex justify-content-center">
+                <ul class="list-unstyled text-center" style="width: 50%;">
+                    <li style="margin-bottom: 10px;">
+                        <img src="facebook.jpeg" alt="Facebook" style="width: 30px; height: 30px; vertical-align: middle;">
+                        <div>@LifestyleVibes</div> <!-- Ganti UsernameFB dengan username yang sesuai -->
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <img src="x.jpeg" alt="Twitter" style="width: 30px; height: 30px; vertical-align: middle;">
+                        <div>@LV</div> <!-- Ganti UsernameX dengan username yang sesuai -->
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <img src="instagram.jpeg" alt="Instagram" style="width: 30px; height: 30px; vertical-align: middle;">
+                        <div>@LSVibes</div> <!-- Ganti UsernameIG dengan username yang sesuai -->
+                    </li>
+                </ul>
+            </div>              
+        </div>
+    </div>
+</section>
+
+    
+    
+    
+    
+    <section id="subscribe" class="container mt-5">
+        <div class="sticky-container p-4 border rounded shadow-sm" style="position: sticky; top: 80px;">
+            <h2 class="text-center mb-4">Subscribe to keep updated!</h2>
+            <form id="subscribeForm" onsubmit="event.preventDefault(); hideForm(); showThankYouMessage();" class="p-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+            </form>
+            <div id="thankYouMessage" class="alert alert-success text-center mt-4" style="display: none;">
+                Thank you for subscribing!
+            </div>
+        </div>
+    </section>
+    
+<footer class="bg-light text-center py-4 mt-5">
+    <p class="mb-0">© 2024 Healthy Living. All rights reserved.</p>
+</footer>
+
+<script>
+    
+    function hideForm() {
+        document.getElementById("subscribeForm").style.display = "none";
+    }
+    function showThankYouMessage() {
+        document.getElementById("thankYouMessage").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
